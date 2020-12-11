@@ -2,6 +2,7 @@
     --primario: #FFC107;
     --secundario: #0097A7;
     --oscuro: #212121;
+    --gris: #757575;
     --anchoPantalla: 1200px;
 }
 
@@ -24,12 +25,6 @@ body {
     font-size: 1.6rem;
 }
 
-h1,
-h2,
-h3 {
-    margin: 0;
-}
-
 h2,
 h3 {
     text-align: center;
@@ -39,6 +34,11 @@ h3 {
     color: var(--secundario);
     font-weight: 400;
     font-size: 3rem;
+}
+
+p {
+    font-size: 1.8rem;
+    line-height: 2;
 }
 
 .site-header {
@@ -121,11 +121,16 @@ h3 {
     font-weight: 700;
     font-size: 2.2rem;
     border-radius: .5rem;
+    border: none;
+}
+
+.boton:hover {
+    cursor: pointer;
 }
 
 .contenedor {
     max-width: var(--anchoPantalla);
-    margin: 0 auto;
+    margin: 3rem auto;
     background-color: #ffffff;
     padding: 3rem;
     border-radius: 1rem;
@@ -134,6 +139,97 @@ h3 {
     box-shadow: 0px 9px 21px -9px rgba(0, 0, 0, 0.64);
 }
 
-.servicios {
+.contenedor-servicios {
+    margin-top: 3rem;
+}
+
+@media (min-width: 768px) {
+    .contenedor-servicios {
+        display: flex;
+        justify-content: space-between;
+    }
+    .servicio {
+        flex: 0 0 calc( 33.3% - 1rem);
+    }
+}
+
+.servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.iconos {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: var(--primario);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.iconos {
+    font-size: 3rem;
+}
+
+form {
+    background-color: var(--gris);
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-top: 3rem;
+}
+
+form legend {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--primario);
     margin: 3rem auto;
+}
+
+@media (min-width: 768px) {
+    form {
+        max-width: 800px;
+        margin: 3rem auto;
+    }
+    .contenedor-campos {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .campo {
+        flex: 0 0 calc(50% - 1rem);
+    }
+}
+
+.campo {
+    display: flex;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.campo label {
+    flex: 0 0 90px;
+    padding-top: .5rem;
+    color: #ffffff;
+}
+
+.campo input {
+    flex: 1;
+    height: 4rem;
+}
+
+.campo textarea {
+    flex: 1;
+    height: 6rem;
+}
+
+.w-100 {
+    flex: 0 0 100%;
+}
+
+.enviar {
+    display: flex;
+    justify-content: flex-end;
 }
