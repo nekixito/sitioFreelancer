@@ -1,5 +1,8 @@
 :root {
+    --primario: #FFC107;
+    --secundario: #0097A7;
     --oscuro: #212121;
+    --anchoPantalla: 1200px;
 }
 
 html {
@@ -21,12 +24,29 @@ body {
     font-size: 1.6rem;
 }
 
+h1,
+h2,
+h3 {
+    margin: 0;
+}
+
+h2,
+h3 {
+    text-align: center;
+}
+
+h3 {
+    color: var(--secundario);
+    font-weight: 400;
+    font-size: 3rem;
+}
+
 .site-header {
     background-color: #ffffff;
 }
 
 .site-header nav {
-    max-width: 120rem;
+    max-width: var(--anchoPantalla);
     margin: 0 auto;
     padding: 2rem 0;
     display: flex;
@@ -56,4 +76,64 @@ body {
     .site-header nav a {
         margin-bottom: 0;
     }
+}
+
+.hero {
+    height: 45rem;
+    background-image: url(../img/hero.jpg);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.hero::after {
+    content: '';
+    background-color: rgb(0, 0, 0, .7);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.contenedor-hero {
+    color: #ffffff;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.contenedor-hero i {
+    font-size: 5rem;
+    color: var(--primario);
+}
+
+.boton {
+    background-color: var(--secundario);
+    padding: 1rem 5rem;
+    display: inline-block;
+    margin-top: 1rem;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 2.2rem;
+    border-radius: .5rem;
+}
+
+.contenedor {
+    max-width: var(--anchoPantalla);
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 3rem;
+    border-radius: 1rem;
+    -webkit-box-shadow: 0px 9px 21px -9px rgba(0, 0, 0, 0.64);
+    -moz-box-shadow: 0px 9px 21px -9px rgba(0, 0, 0, 0.64);
+    box-shadow: 0px 9px 21px -9px rgba(0, 0, 0, 0.64);
+}
+
+.servicios {
+    margin: 3rem auto;
 }
